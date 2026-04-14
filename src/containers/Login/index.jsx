@@ -1,11 +1,8 @@
-
-
 export function Login() {
-
-    return (
-
-        <div>
-            <h1>Login</h1>
-        </div>
-    )
+  const nome = 'Laercio';
+  return (
+    <div>
+      <h1>Login</h1>
+    </div>
+  );
 }
