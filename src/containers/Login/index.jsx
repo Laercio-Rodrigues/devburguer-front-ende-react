@@ -1,6 +1,7 @@
 import Logo from '../../assets/logo.svg';
+import { Button } from '../../components/Button'
+
 import {
-	Button,
 	Container,
 	Form,
 	InputContainer,
@@ -8,6 +9,8 @@ import {
 	RightContainer,
 	Title,
 } from './styles';
+
+
 
 export function Login() {
 	return (
