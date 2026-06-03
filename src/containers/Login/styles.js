@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import Background from "../../assets/background.svg";
+import BackgroundLogin from "../../assets/background-login.svg";
 
-import BackgroundLogin from '../../assets/background-login.svg'
-
-import Background from '../../assets/background.svg'
 
 
 export const Container = styled.div`
@@ -94,5 +93,3 @@ export const InputContainer = styled.div`
 `;
 
 // export const Link = styled.a``;
-
-
