@@ -1,9 +1,9 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
-import Logo from "../../assets/logo.svg";
-import { Button } from "../../components/Button";
+import Logo from '../../assets/logo.svg';
+import { Button } from '../../components/Button';
 
 import {
 	Container,
@@ -12,13 +12,13 @@ import {
 	LeftContainer,
 	RightContainer,
 	Title,
-} from "./styles";
+} from './styles';
 
 export function Login() {
 	const schema = yup
 		.object({
-			email: yup.string().email().required(),
-			password: yup.string().min(6).required(),
+			email: yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
+			password: yup.string().min(6, 'A senha deve ter pelo menos 6 caracteres').required('Digite uma senha'),
 		})
 		.required();
 
@@ -29,6 +29,9 @@ export function Login() {
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
+
+	console.log(errors);
+
 	const onSubmit = (data) => console.log(data);
 
 	return (
@@ -46,15 +49,17 @@ export function Login() {
 					<InputContainer>
 						<label>
 							Email
-							<input type="email" {...register("email")} />
+							<input type="email" {...register('email')} />
 						</label>
+						<p>{errors?.email?.message}</p>
 					</InputContainer>
 
 					<InputContainer>
 						<label>
 							Senha
-							<input type="password" {...register("password")} />
+							<input type="password" {...register('password')} />
 						</label>
+						<p>{errors?.password?.message}</p>
 					</InputContainer>
 					<Button type="submit">Entrar</Button>
 				</Form>
