@@ -18,8 +18,14 @@ import {
 export function Login() {
 	const schema = yup
 		.object({
-			email: yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
-			password: yup.string().min(6, 'A senha deve ter pelo menos 6 caracteres').required('Digite uma senha'),
+			email: yup
+				.string()
+				.email('Digite um e-mail válido')
+				.required('O e-mail é obrigatório'),
+			password: yup
+				.string()
+				.min(6, 'A senha deve ter pelo menos 6 caracteres')
+				.required('Digite uma senha'),
 		})
 		.required();
 
@@ -37,11 +43,10 @@ export function Login() {
 		const response = await api.post('/sessions', {
 			email: data.email,
 			password: data.password,
-		})
+		});
 
-
-		console.log(response)
-	}
+		console.log(response);
+	};
 
 	return (
 		<Container>
