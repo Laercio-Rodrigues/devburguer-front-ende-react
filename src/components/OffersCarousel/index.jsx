@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import * as MultiCarouselModule from 'react-multi-carousel';
 import { api } from '../../services/api';
-import { Container, ContainerItems, Title } from './styles';
+import { CardProduct } from '../CardProduct';
+import { Container, Title } from './styles';
 import 'react-multi-carousel/lib/styles.css';
 const Carousel =
 	MultiCarouselModule.default?.default ||
@@ -53,8 +54,7 @@ export function OffersCarousel() {
 				itemClass="carousel-item"
 			>
 				{offers.map((product) => (
-					<ContainerItems key={product.id} $imageUrl={product.url}><p>{product.name}</p>
-					</ContainerItems>
+					<CardProduct key={product.id} product={product} />
 				))}
 			</Carousel>
 		</Container>
