@@ -36,7 +36,7 @@ export const useUser = () => {
 	const context = useContext(UserContext);
 
 	if (!context) {
-		throw new Erro('useUser must be a valid context');
+		throw new Error('useUser must be a valid context');
 	}
 
 	return context;
