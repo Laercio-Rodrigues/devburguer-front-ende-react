@@ -12,7 +12,6 @@ export function Home() {
 				<div>
 					<CategoriesCarousel />
 					<OffersCarousel />
-					<div>Carrossel de Produtos</div>
 				</div>
 			</Container>
 		</main>
