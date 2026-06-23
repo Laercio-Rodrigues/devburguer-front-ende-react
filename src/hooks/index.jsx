@@ -1,3 +1,4 @@
+import { CartProvider } from './CartContext';
 import { UserProvider } from './UserContext';
 
 const AppProvider = ({ children }) => {
