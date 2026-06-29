@@ -39,7 +39,10 @@ export const CartProvider = ({ children }) => {
 		updateLocalStorage(newProductsInCart);
 	};
 
-	const clearCart = () => {};
+	const clearCart = () => {
+		setCartProducts([]);
+		updateLocalStorage([]);
+	};
 
 	const deleteProducts = (productId) => {
 		const newCart = cartProducts.filter((prd) => prd.id !== productId);
@@ -87,11 +90,11 @@ export const CartProvider = ({ children }) => {
 		localStorage.setItem('devburger:cartInfo', JSON.stringify(products));
 	};
 	useEffect(() => {
-		const clientCartData = localStorage.getItem('devburger:cartInfo')
+		const clientCartData = localStorage.getItem('devburger:cartInfo');
 
-        if(clientCartData){
-            setCartProducts(JSON.parse(clientCartData))
-        }
+		if (clientCartData) {
+			setCartProducts(JSON.parse(clientCartData));
+		}
 	}, []);
 
 	return (
