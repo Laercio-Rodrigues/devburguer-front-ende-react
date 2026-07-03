@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Background from '../../assets/background.svg'
+import Background from '../../assets/background.svg';
 import BannerHome from '../../assets/banner-home.svg';
 
 export const Banner = styled.div`
@@ -19,12 +19,8 @@ export const Banner = styled.div`
         right: 20%;
         top: 10%;
     }
-`
-
-
+`;
 
 export const Container = styled.section`
     background:linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('${Background}');
 `;
-
-;

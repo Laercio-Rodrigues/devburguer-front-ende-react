@@ -17,12 +17,11 @@ export const UserProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
-		const userInfoLocalStorage = localStorage.getItem('devbuger:userData')
+		const userInfoLocalStorage = localStorage.getItem('devbuger:userData');
 
-		if(userInfoLocalStorage){
-			setUserInfo(JSON.parse(userInfoLocalStorage))
+		if (userInfoLocalStorage) {
+			setUserInfo(JSON.parse(userInfoLocalStorage));
 		}
-		
 	}, []);
 
 	return (

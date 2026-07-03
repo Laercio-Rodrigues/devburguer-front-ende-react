@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 50px;
@@ -15,5 +14,4 @@ export const Container = styled.div`
         font-size: 14px;
         font-weight: lighter;
     }
-`
-
+`;

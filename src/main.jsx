@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<AppProvider>
 			<Elements stripe={stripePromise}>
-			<RouterProvider router={router} />
+				<RouterProvider router={router} />
 			</Elements>
 			<GlbalStyles />
 			<ToastContainer autoClose={2000} theme="colored" />

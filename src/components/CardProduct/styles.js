@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
@@ -35,11 +35,10 @@ export const Container = styled.div`
             line-height: 20px;
         }
     }
-`
+`;
 
 export const CardImage = styled.img`
     height: 100px;
     position: absolute;
     top: -50px;
-`
-
+`;

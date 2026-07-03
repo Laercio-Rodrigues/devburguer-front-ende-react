@@ -33,12 +33,11 @@ export function CartResume() {
 		});
 
 		try {
-			const { data } = await api.post('/create-payent-intent', { products });
+			const { data } = await api.post('/create-payment-intent', { products });
 
 			navigate('/checkout', {
 				state: data,
-			})
-
+			});
 		} catch (_error) {
 			toast.error('Erro, tente novamente!', {
 				position: 'top-right',
@@ -52,29 +51,7 @@ export function CartResume() {
 			});
 		}
 
-		// try {
-		// 	const { status } = await api.post(
-		// 		'/Orders',
-		// 		{ products },
-		// 		{
-		// 			validateStatus: () => true,
-		// 		},
-		// 	);
 
-		// 	if (status === 200 || status === 201) {
-		// 		setTimeout(() => {
-		// 			navigate('/');
-		// 		}, 2000);
-		// 		clearCart();
-		// 		toast.success('Pedido realizado com sucesso!');
-		// 	} else if (status === 409) {
-		// 		toast.error('Falha ao realizar seu pedido');
-		// 	} else {
-		// 		throw new Error();
-		// 	}
-		// } catch {
-		// 	toast.error('😭 Falha no Sistema! Tente novamente');
-		// }
 	};
 
 	return (

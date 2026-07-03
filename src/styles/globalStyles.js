@@ -1,6 +1,5 @@
-import 'react-toastify/dist/ReactToastify.css'
-import { createGlobalStyle } from "styled-components";
-
+import 'react-toastify/dist/ReactToastify.css';
+import { createGlobalStyle } from 'styled-components';
 
 const globalStyles = createGlobalStyle`
     * {
@@ -16,7 +15,6 @@ const globalStyles = createGlobalStyle`
     button, a {
         cursor: pointer;
     }
-`
+`;
 
-export default globalStyles
-
+export default globalStyles;
