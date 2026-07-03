@@ -10,7 +10,8 @@ import {
 	TrashImage,
 } from './styles';
 export function CartItems() {
-	const { cartProducts, decreaseProducts, increaseProduct, deleteProducts } = useCart();
+	const { cartProducts, decreaseProducts, increaseProduct, deleteProducts } =
+		useCart();
 
 	console.log(cartProducts);
 	return (
@@ -68,7 +69,11 @@ export function CartItems() {
 						</Table.Tr>
 					))
 				) : (
-					<EmptyCart>Carrinho Vazio</EmptyCart>
+					<Table.Tr>
+      <Table.Td colSpan={6}>
+        <EmptyCart>Carrinho Vazio</EmptyCart>
+      </Table.Td>
+    </Table.Tr>
 				)}
 			</Table.Body>
 		</Table.Root>
