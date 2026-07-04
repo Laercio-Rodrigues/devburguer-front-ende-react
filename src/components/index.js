@@ -7,5 +7,6 @@ export * from './CategoriesCasousel';
 export * from './Footer';
 export * from './Header';
 export * from './OffersCarousel';
-export { default as CheckoutForm } from './Stripe/CheckoutForm';
+// export { default as CheckoutForm } from './Stripe/CheckoutForm';
+export * from './Stripe/CheckoutForm'
 export * from './Table';

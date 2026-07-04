@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { useCart } from '../../../hooks/CartContext';
 import { api } from '../../../services/api';
 
-export default function CheckoutForm() {
+export function CheckoutForm() {
 	const Navigate = useNavigate();
 	const { cartProducts, clearCart } = useCart();
 	const stripe = useStripe();
@@ -66,8 +66,10 @@ export default function CheckoutForm() {
 
 				if (status === 200 || status === 201) {
 					setTimeout(() => {
-						Navigate(`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`);
-						clearCart();
+						Navigate(
+							`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+						);
+						// clearCart();
 					}, 3000);
 					clearCart();
 					toast.success('Pedido realizado com sucesso!');
@@ -79,6 +81,10 @@ export default function CheckoutForm() {
 			} catch {
 				toast.error('😭 Falha no Sistema! Tente novamente');
 			}
+		} else {
+			Navigate(
+				`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+			);
 		}
 
 		setIsLoading(false);
