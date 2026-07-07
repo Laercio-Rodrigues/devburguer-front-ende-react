@@ -8,5 +8,6 @@ export * from './Footer';
 export * from './Header';
 export * from './OffersCarousel';
 // export { default as CheckoutForm } from './Stripe/CheckoutForm';
-export * from './Stripe/CheckoutForm'
+export * from './SideNavAdmin';
+export * from './Stripe/CheckoutForm';
 export * from './Table';
