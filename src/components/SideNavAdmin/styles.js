@@ -32,6 +32,7 @@ export const NavLink = styled(Link)`
 
     &:hover {
         background-color: ${(props) => props.theme.purple};
+        border: 1px solid ${props => props.theme.black};
     }
 `;
 
