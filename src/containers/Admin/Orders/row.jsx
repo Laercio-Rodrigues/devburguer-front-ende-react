@@ -11,10 +11,18 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { api } from '../../../services/api';
+import { formatDate } from '../../../utils/formatDate';
+import { orderStatusOptions } from './orderStatus';
+import { ProductImage, SelectStatus } from './styles';
 
 export function Row(props) {
 	const { row } = props;
 	const [open, setOpen] = useState(false);
+
+	async function newStatusOrder(id, status) {
+		await api.put(`Orders/${id}`, { status })
+	}
 
 	return (
 		<>
@@ -32,8 +40,16 @@ export function Row(props) {
 					{row.orderId}
 				</TableCell>
 				<TableCell>{row.name}</TableCell>
-				<TableCell>{row.date}</TableCell>
-				<TableCell>{row.status}</TableCell>
+				<TableCell>{formatDate(row.date)}</TableCell>
+				<TableCell>
+					<SelectStatus 
+						placeholder='Status' 
+						options={orderStatusOptions.filter((status) => status.id !== 0)}
+						defaultValue={ orderStatusOptions.find( status => status.value === row.status || null) }
+						onChange={ status => newStatusOrder(row.orderId, status.value)}
+						
+						/>
+				</TableCell>
 			</TableRow>
 			<TableRow>
 				<TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -48,7 +64,7 @@ export function Row(props) {
 										<TableCell>Quantidade</TableCell>
 										<TableCell>Produdo</TableCell>
 										<TableCell>Categoria</TableCell>
-										<TableCell></TableCell>
+										<TableCell>Imagem do Produto</TableCell>
 									</TableRow>
 								</TableHead>
 								<TableBody>
@@ -60,7 +76,7 @@ export function Row(props) {
 											<TableCell>{product.name}</TableCell>
 											<TableCell>{product.category}</TableCell>
 											<TableCell>
-												<img src={product.url} alt={product.name} />
+												<ProductImage src={product.url} alt={product.name} />
 											</TableCell>
 										</TableRow>
 									))}
@@ -87,44 +103,11 @@ Row.propTypes = {
 				price: PropTypes.number.isRequired,
 				quantity: PropTypes.number.isRequired,
 				url: PropTypes.string.isRequired,
-			})
+			}),
 		).isRequired,
 		status: PropTypes.string.isRequired,
 	}).isRequired,
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -201,8 +184,6 @@ Row.propTypes = {
 // 		</>
 // 	);
 // }
-
-
 
 // Row.propTypes = {
 // 	row: PropTypes.shape({
