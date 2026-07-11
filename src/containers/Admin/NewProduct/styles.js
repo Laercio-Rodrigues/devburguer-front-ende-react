@@ -62,7 +62,7 @@ export const LabelUpload = styled.label`
 `;
 
 export const Select = styled(ReactSelect)`
-
+    
 `;
 export const SubmitButton = styled(Button)`
     margin-top: 40px;
