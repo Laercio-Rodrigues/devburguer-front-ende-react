@@ -48,25 +48,61 @@ export function Orders() {
 	}, [filterredOrders]);
 
 	function handleStatus(status) {
-		if (status.id === 0) {
-			setFilterredOders(orders);
-		} else {
-			const newOrders = orders.filter((order) => order.status === status.value);
+    setActiveStatus(status.id);
+}
 
-			setFilterredOders(newOrders);
-		}
+useEffect(() => {
+    if (activeStatus === 0) {
+        setFilterredOders(orders);
+    } else {
+        const statusIndex = orderStatusOptions.findIndex(
+            (item) => item.id === activeStatus,
+        );
 
-		setActiveStatus(status.id)
-	}
+        const newFilterredOrders = orders.filter(
+            (order) => order.status === orderStatusOptions[statusIndex].value,
+        );
+
+        setFilterredOders(newFilterredOrders);
+    }
+}, [orders, activeStatus]);
+
+	// function handleStatus(status) {
+	// 	if (status.id === 0) {
+	// 		setFilterredOders(orders);
+	// 	} else {
+	// 		const newOrders = orders.filter((order) => order.status === status.value);
+
+	// 		setFilterredOders(newOrders);
+	// 	}
+
+	// 	setActiveStatus(status.id);
+	// }
+
+	// useEffect(() => {
+	// 	if (activeStatus === 0) {
+	// 		setFilterredOders(orders);
+	// 	} else {
+	// 		const statusIndex = orderStatusOptions.findIndex(
+	// 			(item) => item.id === activeStatus,
+	// 		);
+
+	// 		const newFilterredOrders = orders.filter(
+	// 			(order) => order.status === orderStatusOptions[statusIndex].value,
+	// 		);
+
+	// 		setFilterredOders(newFilterredOrders)
+	// 	}
+	// }, [orders]);
 
 	return (
 		<>
 			<Filter>
 				{orderStatusOptions.map((status) => (
-					<FilterOptions 
-					key={status.id} 
-					onClick={() => handleStatus(status)}
-					$isActiveStatus={activeStatus === status.id}
+					<FilterOptions
+						key={status.id}
+						onClick={() => handleStatus(status)}
+						$isActiveStatus={activeStatus === status.id}
 					>
 						{status.label}
 					</FilterOptions>

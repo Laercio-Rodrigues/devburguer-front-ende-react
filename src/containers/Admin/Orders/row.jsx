@@ -65,6 +65,7 @@ export function Row({ row, setOrders, orders }) {
 						)}
 						onChange={(status) => newStatusOrder(row.orderId, status.value)}
 						isLoading={loading}
+						menuPortalTarget={document.body}
 					/>
 				</TableCell>
 			</TableRow>
