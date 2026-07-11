@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import * as MultiCarouselModule from 'react-multi-carousel';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
-import { CategoryButton, Container, ContainerItems, Title } from './styles';
+import {  CategoryButton, Container, ContainerItems, Title } from './styles';
 import 'react-multi-carousel/lib/styles.css';
 const Carousel =
 	MultiCarouselModule.default?.default ||

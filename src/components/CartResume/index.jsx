@@ -59,7 +59,7 @@ export function CartResume() {
 		<div>
 			<Container>
 				<div className="container-top">
-					<h2 className="title">Resum do Pedido</h2>
+					<h2 className="title">Resumo do Pedido</h2>
 					<p className="items">Itens</p>
 					<p className="items-prices">{formatPrice(finalPrice)}</p>
 					<p className="delivery-tax">Taxa de Entrega</p>

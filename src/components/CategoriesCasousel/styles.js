@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -53,7 +52,7 @@ export const ContainerItems = styled.div`
     height: 250px;
 `;
 
-export const CategoryButton = styled(Link)`
+export const CategoryButton = styled.button`
     color: ${(props) => props.theme.white};
         background-color: rgba(0, 0, 0, 0.5);
         padding: 10px 30px;
