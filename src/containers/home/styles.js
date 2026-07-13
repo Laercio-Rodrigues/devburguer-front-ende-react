@@ -1,9 +1,6 @@
-// import styled from 'styled-components';
-// import Background from '../../assets/background.svg';
-// import BannerHome from '../../assets/banner-home.svg';
-
 import styled from 'styled-components';
-
+import Background from '../../assets/background.svg';
+import BannerHome from '../../assets/banner-home.svg';
 
 export const Banner = styled.div`
     background: url('${BannerHome}') no-repeat;
