@@ -19,8 +19,8 @@ FROM nginx:alpine
 # Copia os arquivos buildados do estágio anterior para o Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copia uma configuração customizada do Nginx se necessário (opcional)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# ATIVADO AQUI: Agora o Docker vai usar a nossa configuração inteligente
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
