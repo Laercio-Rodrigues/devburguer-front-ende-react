@@ -1,12 +1,22 @@
-// Debug: listando todos os containers
-console.log('Containers:', Object.keys(import.meta.glob('./*/*.jsx')));
 
+
+// Containers principais
+export * from "./Register/index.jsx";
 export * from "./Cart/index.jsx";
 export * from "./Checkout/index.jsx";
-export * from "./Home/index.jsx";
 export * from "./Login/index.jsx";
 export * from "./Menu/index.jsx";
-export * from "./Register/index.jsx";
+export * from "./Home/index.jsx";
+
+// Containers Admin
+export * from "./Admin/EditProduct/index.jsx";
+export * from "./Admin/NewProduct/index.jsx";
+export * from "./Admin/Orders/index.jsx";
+export * from "./Admin/Products/index.jsx";
+
+// Containers outros
+export * from "./CompletePayment/index.jsx";
+
 
 
 
