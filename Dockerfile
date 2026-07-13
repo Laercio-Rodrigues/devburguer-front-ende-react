@@ -5,7 +5,9 @@ WORKDIR /app
 
 # Instala dependências
 COPY package*.json ./
-RUN npm install
+RUN npm install eslint-plugin-react@latest --save-dev
+
+
 
 # Copia o restante do projeto
 COPY . .
