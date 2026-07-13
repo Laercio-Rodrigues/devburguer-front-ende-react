@@ -9,7 +9,7 @@ RUN npm install --legacy-peer-deps
 
 
 
-# Copia o restante do projeto
+# Copia o restante do projeto ... *
 COPY . .
 
 # Build da aplicação
