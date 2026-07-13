@@ -13,7 +13,7 @@ export function CartItems() {
 	const { cartProducts, decreaseProducts, increaseProduct, deleteProducts } =
 		useCart();
 
-	console.log(cartProducts);
+	
 	return (
 		<Table.Root>
 			<Table.Header>

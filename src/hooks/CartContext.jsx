@@ -19,7 +19,7 @@ export const CartProvider = ({ children }) => {
          */
 
 		const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id);
-		console.log(cartIndex);
+		
 
 		let newProductsInCart = [];
 

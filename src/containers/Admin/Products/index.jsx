@@ -24,8 +24,7 @@ export function Products() {
 		async function loadProducts() {
 			const { data } = await api.get('/products');
 
-			console.log(data);
-
+			
 			setProducts(data);
 		}
 

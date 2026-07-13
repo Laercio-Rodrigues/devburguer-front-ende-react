@@ -19,7 +19,7 @@ export function CategoriesCarousel() {
 			const { data } = await api.get('/categories');
 
 			setCategories(data);
-			console.log(data);
+			
 		}
 
 		loadCategories();
