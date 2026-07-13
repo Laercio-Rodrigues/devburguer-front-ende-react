@@ -5,7 +5,7 @@ export * from './Admin/Products';
 export * from './Cart';
 export * from './Checkout';
 export * from './CompletePayment';
-export * from "./Home/index.jsx";
+export * from './Home';
 export * from './Login';
 export * from './Menu';
 export * from './Register';
